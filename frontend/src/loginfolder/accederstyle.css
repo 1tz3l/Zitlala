@@ -1,0 +1,111 @@
+
+body{
+    /*Imagen de freepik</a>*/
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/image/6189833_3179875.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.contenedorCentral {
+    width: 70vh; 
+    height: 50vh;
+    margin: 0 auto; 
+    background-color: #ffffe8; 
+    border-radius: 0.5px; 
+    border-width: 2px;
+    border-style: solid;
+    border-top-color: #af267e;
+    border-bottom-color: #af267e;
+    
+}
+
+h1{
+    text-align: center;
+    color:#000027;
+    font-family: "Raleway", sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.contenedor-input {
+    position: relative;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+label {
+    position: absolute;
+    justify-content: center;
+    color: #af267e;
+    font-size: 22px;
+}
+.req {
+    margin: 2px;
+    color: #af267e;
+}
+
+.contenedor-input:focus-within label {
+    opacity: 0; 
+}
+
+.contenedor-input input[type="text"] {
+    font-size: 18px; 
+    color: #333; 
+    width: 50vh;
+    border: 2px solid #af267e; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.main-buttons{
+    /*background-color: #6C4583;*/
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 50vh;
+    margin: 30px auto;
+}
+.main-buttons div{
+
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+
+.main-buttons button{
+    
+    height: 40px;
+    width: 45vh;
+    border-radius: 60px;
+    /*relleno solo del lado derecho e izquierdo de los botones*/
+    padding: 0 5px;
+    background-color: #fff0f3;
+    /*Margen entre botones*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #6C4583;
+    font-size: 18px;
+    color: #000027;
+
+}
+
+
+
+.main-buttons button:hover{
+    border-color: #6C4583;
+    background-color: #b090aa;
+    color: #ecddec;
+
+}

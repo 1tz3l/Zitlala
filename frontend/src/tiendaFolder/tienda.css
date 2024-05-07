@@ -1,0 +1,121 @@
+body {
+    background-image: url("/image/fondoTiendaAzul.jpg");
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+        
+}
+
+header {
+    background-color: #fcece442;
+    display: flex;   
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+    position: fixed; 
+    width: 100%; 
+    height: 20vh;
+    top: 0; 
+    z-index: 1000; 
+    color: #D80286;
+    justify-content: center;
+}
+
+.nav-right-section {
+    display: flex; /* Alinea los elementos de la lista horizontalmente */
+    list-style: none; /* Elimina los estilos predeterminados de lista */
+    padding: 0; /* Elimina el padding predeterminado */
+    width: 10%;
+    height: 100px;
+    
+}
+
+.nav-right-section li {
+    margin-right: 10px; /* Añade margen entre los ítems */
+ 
+}
+
+.nav-right-section img {
+    width: 70px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
+    justify-content: space-around; /* Distribuye los contenedores uniformemente */
+    margin-top: 60px; /* Añade margen en la parte superior para no solaparse con el header */
+    margin-left: 140px;
+}
+
+
+.containerAccesorio{
+    width: 100hv; /* Ancho del 50% menos el espacio entre elementos */
+    margin: 5px; /* Espacio entre elementos */
+    text-align: center;
+    background-color: #044880aa;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+img {
+    width: 115px; 
+    height: auto; 
+    background-color: transparent;
+}
+
+.title {
+    text-align: center;
+    color: #fcece4;   
+    text-shadow:
+        -3px -3px 0 #044880,  
+        3px -3px 0 #044880,  
+        -3px  3px 0 #044880, 
+        3px  3px 0 #044880; 
+    font-family: "Raleway", sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+
+
+footer {
+    font-size: 1px;
+    color: antiquewhite;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(205, 40, 141);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.containerAccesorio:hover {
+    border-radius: 20px;
+    background-color:rgba(245, 245, 220, 0.311) ;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 50px ;
+}

@@ -1,0 +1,78 @@
+
+body{
+    /*Imagen de freepik</a>*/
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/image/FondoPersonaje.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.central-container {
+    width: 180vh; 
+    height: 70vh;
+    margin: 0 auto; 
+    background-color: #94a498b0; 
+    border-radius: 45px; 
+    border-width: 2px;    
+}
+
+h1{
+    text-align: center;
+    color:#00cdbe;
+    text-shadow:
+        -3px -3px 0 #345a6b,  
+        3px -3px 0 #345a6b,  
+        -3px  3px 0 #345a6b, 
+        3px  3px 0 #345a6b; 
+    font-family: "Raleway", sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.buttons-container{
+    display: flex;          
+    flex-wrap: wrap;         
+    justify-content: center; 
+    align-items: center;    
+}
+
+.character-button {
+    margin: 5px;  /*Espacio alrededor de cada botón */
+    border-radius: 8px; 
+    
+}
+
+
+.character-button button {
+    /* cada personaje*/
+    width: 100%; 
+    border: none; 
+    background-color: transparent; 
+    cursor: pointer; /*Cursor cambia a manita */
+}
+
+
+.character-button button:hover{
+    border-radius: 70px;
+    background-color: #7aa79f;
+}
+
+img {
+    width: 29vh; 
+    height: auto; 
+    background-color: transparent;
+}
+
+.character-button img {
+    background-color: transparent; 
+    max-width: 100%; 
+    height: auto; 
+}
+
+

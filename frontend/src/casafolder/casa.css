@@ -1,0 +1,50 @@
+body {
+            background-image: url("/image/Background1.png");
+            background-size:1500px 650px ;
+            background-repeat: no-repeat;
+            margin: auto;
+        }
+
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+.regre {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.iconos {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            
+        }
+
+img {
+        width: 50px;
+        height: 50px;
+         margin-top: 25px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+}
+.container {
+    position: relative;
+}
+
+.container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 400px;
+    height: 400px;
+    margin-left: 500px;
+    margin-top: 150px;
+}

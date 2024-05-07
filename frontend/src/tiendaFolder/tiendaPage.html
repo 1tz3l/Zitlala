@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORE</title>
+    <link href="/tiendaFolder/tienda.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <h1>Tienda</h1>
+        </div>
+        <nav>
+        <ul class="nav-right-section">
+            <li>
+                <a href="">
+                   tonali <img src="/image/tonali(sol).png"  alt="moneda tonali">
+                 </a>
+            </li>
+            <li>
+                <a href="">
+                    metstli <img src="/image/coin_metstli.png" alt="Moneda metstli">
+                 </a>
+            </li>
+        </ul>
+
+        </nav>
+    </header>
+
+
+    <section class="main-section">+
+
+        <div class="containerAccesorio">
+           <img src="/image/colaDragon.png" alt="cola de dragon accesorio">
+                <h1>Cola de dragón</h1>
+                <button class="Item"> Comprar </button>
+        </div>
+
+        <div class="containerAccesorio">
+            
+            <img src="/image/Colmillos.png" alt="colmillos de vampiro accesorio">
+                <h1>Colmillos de vampiro</h1>
+                <button class="Item"> Comprar </button>
+            </div>
+
+        <div class="containerAccesorio">
+                    <img src="/image/orejasElfo.png" alt="Orejas de elfo accesorio">
+                    <h1>Orejas de elfo</h1>
+                    <button class="Item"> Comprar </button>
+        </div>
+
+        <div class="containerAccesorio">
+                <img src="/image/cuernoUnicornio.png" alt="Cuerno de unicornio accesorio">
+                <h1>Cuerno de unicornio</h1>
+                <button class="Item"> Comprar </button>
+            </div>
+
+        <div class="containerAccesorio">
+                <img src="/image/AntenasAlien.png" alt="Antena de insecto accesorio">
+                <h1>Antena de insecto</h1>
+                <button class="Item"> Comprar </button>
+        </div>
+
+    </section>
+            
+
+
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    // Obtener el elemento estático "padre" más cercano a los botones
+    const mainSection = document.querySelector('.main-section');
+
+    // Añadir event listener al elemento estático "padre"
+    mainSection.addEventListener('click', (event) => {
+        // Comprobar si el elemento clickeado es un botón
+        if (event.target.tagName === 'BUTTON') {
+            // Obtener el texto del elemento "hermano" anterior, el cual contiene el título
+            const itemName = event.target.parentElement.previousElementSibling.querySelector('h1').innerText;
+            alert(`Has comprado ${itemName}`);
+        }
+    });
+});
+</script>
+   
+
+</body>
+
+</html>
