@@ -1,20 +1,24 @@
 # Zitlala
+
 # Fullstack dApp (Azle + Express + NextJS + ICP)
 
-This template is designed to easily build applications deployed on ICP using Azle + Express for RESTful APIs and Next.js for frontend development.
+"Zitlala", is an exciting adventure game that immerses you in a magical world inspired by the rich mythology.
+This repository includes all the specifications to implement this game, frontend and backend.
+The code includes essencial endpoints such as the implement of tokens for ICP, a similar traditional login but througt an Internet Identity, and endpoints that allow sharing all the data to run the frontend.
+
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/adrian-d-hidalgo/azle-api-rest-nextjs
+  git clone https://github.com/1tz3l/Zitlala.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd azle-api-rest-nextjs
+  cd Zitlala
 ```
 
 Install dependencies
@@ -51,9 +55,9 @@ Your .env file should look something like this:
 
 ```bash
 # Replace BACKEND_CANISTER_ID with your backend canister id
-NEXT_PUBLIC_API_REST_URL=http://BACKEND_CANISTER_ID.localshot:4943
+NEXT_PUBLIC_API_REST_URL=http://BACKEND_CANISTER_ID.localhost:4943
 # Replace INTERNET_IDENTITY_CANISTER_ID with your internet-identity canister id
-NEXT_PUBLIC_INTERNET_IDENTITY_URL=http://INTERNET_IDENTITY_CANISTER_ID.localshot:4943
+NEXT_PUBLIC_INTERNET_IDENTITY_URL=http://INTERNET_IDENTITY_CANISTER_ID.localhost:4943
 ```
 
 Deploy your canisters:
