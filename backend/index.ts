@@ -70,7 +70,7 @@ import { Database } from "./database";
         res.json(result);
     });
 
-    app.get("/users", (req, res) => {
+    app.get("/users", AuthGuard, (req, res) => {
         const { principal } = req.query;
 
         try {
@@ -109,7 +109,7 @@ import { Database } from "./database";
 
     //Endpoints game
 
-    app.post("/furniture", (req, res) => {
+    app.post("/furniture", AuthGuard, (req, res) => {
 
         const { background, window, bookcase, bed, chair, tableItem } = req.body;
 
@@ -119,7 +119,7 @@ import { Database } from "./database";
         res.json(result);
     });
 
-    app.get("/furniture", (req, res) => {
+    app.get("/furniture", AuthGuard, (req, res) => {
         try {
             const result = req.database.exec(`SELECT * FROM furniture`);
             res.json(result);
@@ -132,7 +132,7 @@ import { Database } from "./database";
     });
 
 
-    app.post("/clothes", (req, res) => { 
+    app.post("/clothes", AuthGuard, (req, res) => { 
             
         const { head, ears, back, chest, shoes, mouth, butt } = req.body;
 
@@ -142,7 +142,7 @@ import { Database } from "./database";
         res.json(result);
     });
 
-    app.get("/clothes", (req, res) => {
+    app.get("/clothes", AuthGuard, (req, res) => {
         try {
             const result = req.database.exec(`SELECT * FROM clothes`);
             res.json(result);
@@ -154,14 +154,14 @@ import { Database } from "./database";
         }
      });
 
-    app.post("/food", (req, res) => {
+    app.post("/food", AuthGuard, (req, res) => {
 
         const { fruit, vegetable, meat, dessert, drink } = req.body;
 
         const result = req.database.exec(`INSERT INTO food (fruit, vegetable, meat, dessert, drink) VALUES ('${fruit}', '${vegetable}', '${meat}', '${dessert}', '${drink})')`);
     });
 
-    app.get("/food", (req, res) => {
+    app.get("/food", AuthGuard, (req, res) => {
         try {
             const result = req.database.exec(`SELECT * FROM food`);
             res.json(result);
