@@ -57,7 +57,6 @@ import { Database } from "./database";
         res.send().statusCode = 204;
     });
 
-
     app.post("/users", AuthGuard, (req, res) => {
         const principal = ic.caller().toString();
         const { username, bio } = req.body;
@@ -81,29 +80,6 @@ import { Database } from "./database";
         } catch (error) {
         console.error(error);
         res.status(500).send("An error occurred while fetching users.");
-        }
-    });
-
-    app.post("/contacts", AuthGuard, (req, res) => {
-        const { name, email } = req.body;
-
-        const result = req.database.exec(`
-        INSERT INTO contacts (name, email) VALUES ('${name}', '${email}')
-        `);
-
-        res.json({
-        name,
-        email,
-        });
-    });
-
-    app.get("/contacts", AuthGuard, (req, res) => {
-        try {
-        const result = req.database.exec(`SELECT * FROM contacts`);
-        res.json(result);
-        } catch (error) {
-        console.error(error);
-        res.status(500).send("An error occurred while fetching contacts.");
         }
     });
 

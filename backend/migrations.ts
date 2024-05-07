@@ -12,16 +12,9 @@ export const migrations = new Map<string, MigrationItem>();
  * Migration to create the users table.
  */
 migrations.set("2024-05-04_1156_create_users_table", {
-  queries: ["CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT);"],
+  queries: ["CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username BLOB);"],
 });
 
-/*
- * Migration to create the contacts table.
- */
-
-migrations.set("2024-05-04_1159_create_contacts_table", {
-  queries: ["CREATE TABLE contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT);"],
-});
 
 
 /* Migration to create furniture table */
@@ -59,6 +52,6 @@ migrations.set("2024-05-04_1159_create_contacts_table", {
 /*
 * Migration to create store table and related to items
 */
-//migrations.set("2024-05-04_1204_create_store_table", {
- // queries: ["CREATE TABLE store (id INTEGER PRIMARY KEY AUTOINCREMENT, IdItems INTEGER, FOREING KEY(IdItems) REFERENCES items(id);"],
-//});
+/*migrations.set("2024-05-04_1204_create_store_table", {
+ queries: ["CREATE TABLE store (id INTEGER PRIMARY KEY AUTOINCREMENT, IdItems INTEGER, FOREING KEY(IdItems) REFERENCES items(id);"],
+});*/
