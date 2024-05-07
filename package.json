@@ -1,6 +1,6 @@
 {
   "name": "azle-api-rest-nextjs",
-  "version": "0.1.0",
+  "version": "0.1.1-beta.0",
   "workspaces": [
     "backend",
     "frontend"
@@ -18,13 +18,22 @@
     "sqlite"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "preclean": "dfx stop && turbo run clean",
-    "clean": "rm -rf .azle && rm -rf .dfx && rm -rf .turbo && rm -rf node_modules"
+    "postinstall": "npm run btc:install",
+    "btc:install": "sh ./scripts/bitcoin/install.sh",
+    "clean": "rm -rf .bitcoin && rm -rf .dfx && rm -rf .azle && rm -rf node_modules",
+    "btc:start": ".bitcoin/bin/bitcoind -conf=$(pwd)/bitcoin.conf -datadir=$(pwd)/.bitcoin/data --port=18444",
+    "btc:mint": ".bitcoin/bin/bitcoin-cli -conf=$(pwd)/bitcoin.conf generatetoaddress 50 $npm_config_address",
+    "icp:start": "dfx start --clean --enable-bitcoin",
+    "icp:canister:create": "dfx canister create --all",
+    "preicp:deploy:local": "npm run icp:canister:create",
+    "icp:deploy:local": "npm run icp:deploy:ckbtc && npm run icp:deploy:apps",
+    "icp:deploy:ckbtc": "sh ./scripts/ckbtc/ckbtc-deploy.sh",
+    "icp:deploy:apps": "sh ./scripts/apps/deploy-apps.sh"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "prettier": "^3.1.1",
-    "turbo": "^1.11.2"
+    "turbo": "^1.11.2",
+    "typescript": "^5.2.2"
   }
 }

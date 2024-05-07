@@ -1,5 +1,5 @@
 import Header from "@components/header";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, use, useEffect, useState } from "react";
 
 import { useAuth, useRestActor } from "@bundly/ares-react";
 
@@ -7,10 +7,16 @@ export default function IcConnectPage(): JSX.Element {
   const backend = useRestActor("backend");
   const { isAuthenticated, identity } = useAuth();
   const [apiStatus, setApiStatus] = useState<string>("pending");
+  const [ckbtcInfo, setCkbtcInfo] = useState<GetCkbtcInfoResponse | undefined>();
 
   useEffect(() => {
     healthCheck();
+    getckBtcInfo();
   }, []);
+
+  useEffect(() => {
+    getckBtcInfo();
+  }, [isAuthenticated]);
 
   async function healthCheck() {
     try {
@@ -19,6 +25,25 @@ export default function IcConnectPage(): JSX.Element {
     } catch (error) {
       console.error({ error });
       setApiStatus("Error");
+    }
+  }
+
+  type GetCkbtcInfoResponse = {
+    address: string;
+    balance: number;
+  };
+
+  async function getckBtcInfo() {
+    setCkbtcInfo(undefined);
+
+    try {
+      const response = await backend.post<GetCkbtcInfoResponse>("/ckbtc/info");
+      setCkbtcInfo({
+        address: response.data.address,
+        balance: response.data.balance,
+      });
+    } catch (error) {
+      console.error({ error });
     }
   }
 
@@ -37,6 +62,12 @@ export default function IcConnectPage(): JSX.Element {
               </p>
               <p className="text-gray-700">
                 <strong>Principal ID:</strong> {identity.getPrincipal().toString()}
+              </p>
+              <p className="text-gray-700">
+                <strong>ckBTC Address:</strong> {ckbtcInfo ? ckbtcInfo?.address : "loading..."}
+              </p>
+              <p className="text-gray-700">
+                <strong>ckBTC Balance:</strong> {ckbtcInfo ? ckbtcInfo?.balance : "loading..."}
               </p>
             </div>
 
